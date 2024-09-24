@@ -1,4 +1,4 @@
-class Persona {
+export class Persona {
     nombre: string;
     edad: number;
 
@@ -11,5 +11,4 @@ class Persona {
         return `Tú nombre es ${this.nombre} y tienes ${this.edad} años`
     }
 }
-const persona1 = new Persona("Marcela Patiño", 20)
-console.log(persona1.saludar())
+
