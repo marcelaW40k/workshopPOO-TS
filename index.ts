@@ -1,4 +1,4 @@
-import { Persona } from "./ejercicio1"
+import { Persona } from "./Persona"
 
 const persona: Persona[] = [
   new Persona("Marcela Patiño", 20),
