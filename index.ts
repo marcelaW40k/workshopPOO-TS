@@ -14,3 +14,6 @@ const persona: Persona[] = [
 ]
 
 persona.forEach((e) => console.log(e.saludar()))
+console.log(" ");
+
+
