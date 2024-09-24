@@ -1,10 +1,11 @@
+import { Direccion } from "./direccion";
 import { Persona } from "./Persona";
 
 export class Empleado extends Persona {
     salario: number;
 
-    constructor(nombre: string, edad: number, salario:number) {
-        super(nombre, edad);
+    constructor(nombre: string, edad: number, direccion: Direccion, salario:number) {
+        super(nombre, edad, direccion);
         this.salario = salario;
     }
 
@@ -18,6 +19,4 @@ export class Empleado extends Persona {
     }
 
 }
-const empleado = new Empleado("Marcela Patiño", 20,3000 );
-//console.log(empleado.trabajar());
-console.log(empleado.saludar());
+
