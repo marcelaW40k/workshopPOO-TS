@@ -1,22 +1,31 @@
-abstract class Vehiculo {
-    
+export abstract class Vehiculo {
+    marca: string;
+    modelo: string;
+    anio: number;
+
+    constructor(marca: string, modelo: string, anio: number) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anio = anio;
+    }
     abstract arrancar():void;
 }
 
-class Coche extends Vehiculo {
+export class Coche extends Vehiculo {
+    constructor(marca: string, modelo: string, anio: number) {
+        super(marca, modelo, anio)
+    }
     arrancar(): void {
         console.log("El coche arranca");
     }
 }
 
-class Moto extends Vehiculo {
+export class Moto extends Vehiculo {
+    constructor(marca: string, modelo: string, anio: number) {
+        super(marca, modelo, anio)
+    }
     arrancar(): void {
         console.log("La moto arranca");
         
     }
 }
-
-const coche = new Coche();
-coche.arrancar();
-const moto = new Moto()
-moto.arrancar();
