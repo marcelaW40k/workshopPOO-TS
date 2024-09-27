@@ -1,6 +1,9 @@
+
 import { Persona } from "./Persona"
 import { Empleado } from "./Empleado";
 import { Coche, Moto } from "./vehiculo";
+import { objEmpleados } from "./objEmpleados";
+
 
 const coche1 = new Coche("Ford", "Mustang", 2024)
 const coche2 = new Coche("Toyota", "Corolla", 2023)
@@ -22,22 +25,34 @@ const persona: Persona[] = [
 
 persona.forEach((e) => console.log(e.saludar()))
 //persona.forEach((p) => console.log("Las personas estan ubicadas en las siguientes ciudades:", p.direccion.ciudad));
-console.log(" ");
-const empleado: Empleado[] = [
-    new Empleado("Juan", 25,{calle: "numero 1", ciudad: "Guajira", pais: "Colombia"}, 1000, [coche1, coche2, moto1, moto2]),
-    new Empleado("María", 30, {calle: "numer0 2", ciudad: "Cali", pais: "Colombia"},  2000, [coche2, moto2]),
-    new Empleado("Carlos", 20, {calle: "numero 3", ciudad: "Medellin", pais: "Colombia"}, 3000, [coche1, moto1, moto2]),
-    new Empleado("Ana", 35, {calle: "numero 4", ciudad: "Cartagena", pais: "Colombia"}, 4000, [moto1, moto2, coche2]),
-    new Empleado("Pedro", 40,{calle: "numero 5", ciudad: "Neiva", pais: "Colombia"}, 5000, [coche2]),
-    new Empleado("Luis", 45,  {calle: "numero 6", ciudad: "Caqueta", pais: "Colombia"}, 6000,  [coche1, coche2]),
-    new Empleado("Olga", 50, {calle: "numero 8", ciudad: "Bogotá", pais: "Colombia"}, 7000, [moto1]),
-    new Empleado("Laura", 55, {calle: "numero 9", ciudad: "Cundinamarca", pais: "Colombia"}, 8000, [moto1, moto2]),
-    new Empleado("Pablo", 60, {calle: "numero 10", ciudad: "Bogotá", pais: "Colombia"}, 9000, [moto2]), 
-    new Empleado("Jose", 65,  {calle: "numero 10", ciudad: "Casanare", pais: "Colombia"}, 10000, [coche1, moto1]),
-]
-
+console.log("--------------------------------------------");
+// const empleado: Empleado[] = [
+//     new Empleado("Juan", 25,{calle: "numero 1", ciudad: "Guajira", pais: "Colombia"}, 1000, [coche1, coche2, moto1, moto2]),
+//     new Empleado("María", 30, {calle: "numer0 2", ciudad: "Cali", pais: "Colombia"},  2000, [coche2, moto2]),
+//     new Empleado("Carlos", 20, {calle: "numero 3", ciudad: "Medellin", pais: "Colombia"}, 3000, [coche1, moto1, moto2]),
+//     new Empleado("Ana", 35, {calle: "numero 4", ciudad: "Cartagena", pais: "Colombia"}, 4000, [moto1, moto2, coche2]),
+//     new Empleado("Pedro", 40,{calle: "numero 5", ciudad: "Neiva", pais: "Colombia"}, 5000, [coche2]),
+//     new Empleado("Luis", 45,  {calle: "numero 6", ciudad: "Caqueta", pais: "Colombia"}, 6000,  [coche1, coche2]),
+//     new Empleado("Olga", 50, {calle: "numero 8", ciudad: "Bogotá", pais: "Colombia"}, 7000, [moto1]),
+//     new Empleado("Laura", 55, {calle: "numero 9", ciudad: "Cundinamarca", pais: "Colombia"}, 8000, [moto1, moto2]),
+//     new Empleado("Pablo", 60, {calle: "numero 10", ciudad: "Bogotá", pais: "Colombia"}, 9000, [moto2]), 
+//     new Empleado("Jose", 65,  {calle: "numero 10", ciudad: "Casanare", pais: "Colombia"}, 10000, [coche1, moto1]),
+// ]
 //empleado.forEach((e) => console.log(e.saludar()))
 //empleado.forEach((e) => console.log("Los empleados estan ubicados en las siguintes ciudades: ", e.direccion.ciudad));
 
+const leerObjEmpleados = () => {
+const empleados = JSON.stringify(objEmpleados)
+console.log(empleados)
+
+const arrayObjEmpleados =  JSON.parse(empleados)
+console.log(arrayObjEmpleados)
+}
+const jsonEmpleadosString = () => {
+  const empleados = JSON.stringify(objEmpleados)
+console.log(empleados)
+}
+leerObjEmpleados();
+jsonEmpleadosString();
 
 

@@ -1,4 +1,4 @@
-[
+export const objEmpleados = [ 
     {
         "nombre": "Juan",
         "edad": 30,
