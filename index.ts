@@ -4,6 +4,7 @@ import { Empleado } from "./Empleado";
 import { Coche, Moto } from "./vehiculo";
 import { objEmpleados } from "./objEmpleados";
 import { EstadoCivil } from "./estadoCivil";
+import { Empresa } from "./empresa";
 
 
 const coche1 = new Coche("Ford", "Mustang", 2024)
@@ -27,7 +28,7 @@ const persona: Persona[] = [
 persona.forEach((e) => console.log(e.saludar()))
 //persona.forEach((p) => console.log("Las personas estan ubicadas en las siguientes ciudades:", p.direccion.ciudad));
 console.log("--------------------------------------------");
-const empleado: Empleado[] = [
+const empleados: Empleado[] = [
     new Empleado("Juan", 25,{calle: "numero 1", ciudad: "Guajira", pais: "Colombia"}, 1000, [coche1, coche2, moto1, moto2], EstadoCivil.DIVORSIADO),
     new Empleado("María", 30, {calle: "numer0 2", ciudad: "Cali", pais: "Colombia"},  2000, [coche2, moto2], EstadoCivil.SOLTERO),
     new Empleado("Carlos", 20, {calle: "numero 3", ciudad: "Medellin", pais: "Colombia"}, 3000, [coche1, moto1, moto2], EstadoCivil.CASADO),
@@ -39,7 +40,7 @@ const empleado: Empleado[] = [
     new Empleado("Pablo", 60, {calle: "numero 10", ciudad: "Bogotá", pais: "Colombia"}, 9000, [moto2], EstadoCivil.DIVORSIADO), 
     new Empleado("Jose", 65,  {calle: "numero 10", ciudad: "Casanare", pais: "Colombia"}, 10000, [coche1, moto1], EstadoCivil.CASADO),
 ]
-empleado.forEach((e) => console.log(e.saludar()))
+empleados.forEach((e) => console.log(e.saludar()))
 //empleado.forEach((e) => console.log("Los empleados estan ubicados en las siguintes ciudades: ", e.direccion.ciudad));
 
 console.log(EstadoCivil.CASADO)
@@ -55,4 +56,12 @@ const jsonEmpleadosString = () => {
 leerObjEmpleados();
 jsonEmpleadosString();
 
+//instanciar clase empresa
+const gestionEmpresa = new Empresa()
+//agregar
+empleados.forEach((empleado) => console.log(gestionEmpresa.agregarEmpleados(empleado)))
+//eliminar
+gestionEmpresa.eliminarEmpleado("Ana")
+//calcular total salario
+gestionEmpresa.calcularSalarios()
 
