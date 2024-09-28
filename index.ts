@@ -5,6 +5,7 @@ import { Coche, Moto } from "./vehiculo";
 import { objEmpleados } from "./objEmpleados";
 import { EstadoCivil } from "./estadoCivil";
 import { Empresa } from "./empresa";
+import { Proyecto } from "./Proyecto";
 
 
 const coche1 = new Coche("Ford", "Mustang", 2024)
@@ -43,7 +44,14 @@ const empleados: Empleado[] = [
 empleados.forEach((e) => console.log(e.saludar()))
 //empleado.forEach((e) => console.log("Los empleados estan ubicados en las siguintes ciudades: ", e.direccion.ciudad));
 
-console.log(EstadoCivil.CASADO)
+const proyectos: Proyecto[] = [
+  new Proyecto("Proyecto: los sueños ", "Descripcion un nuevo sueño", 2, [empleados[0], empleados[1]]),
+    new Proyecto("Proyecto: los sueños 2", "Descripcion un nuevo sueño 2", 1, [empleados[2]]),
+    new Proyecto("Proyecto: los sueños 3", "Descripcion un nuevo sueño 3", 3, [empleados[0], empleados[1], empleados[2]]),
+    new Proyecto("Proyecto: los sueños 4", "Descripcion un nuevo sueño 4", 4, [empleados[0], empleados[1], empleados[2], empleados[0]]),
+    new Proyecto("Proyecto: los sueños 5", "Descripcion un nuevo sueño 5", 5, [empleados[0], empleados[1], empleados[2], empleados[0], empleados[1]]),
+]
+
 const leerObjEmpleados = () => {
 const empleados = JSON.stringify(objEmpleados)
 const arrayObjEmpleados =  JSON.parse(empleados)
@@ -64,4 +72,10 @@ empleados.forEach((empleado) => console.log(gestionEmpresa.agregarEmpleados(empl
 gestionEmpresa.eliminarEmpleado("Ana")
 //calcular total salario
 gestionEmpresa.calcularSalarios()
+
+//Imprimir la descripcion del proyecto
+proyectos.forEach((proyecto) => proyecto.detalleProyecto())
+
+
+
 
