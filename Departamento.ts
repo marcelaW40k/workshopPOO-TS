@@ -10,15 +10,10 @@ export class Departamento {
 
     }
 
-    //agregar empleados 
-    agregarEmpleados(empleado:Empleado){
-        this.empleados.push(empleado)
-    }
-
-    //eliminar empleados por nombre de departamento
-    eliminarEmpleado(nombre: string) {
+      //eliminar empleados por nombre de departamento
+      eliminarEmpleado(nombre: string , empleados:Empleado[]) {
         const cantidadEmpleado =  this.empleados.length;
-        this.empleados = this.empleados.filter((empleado) => empleado.departamento.nombre !== nombre);
+        this.empleados = empleados.filter((empleado) => empleado.departamento.nombre !== nombre);
         if (cantidadEmpleado !== this.empleados.length) {
             console.log("Se eliminaron los empleados del departamento ", nombre)
             console.log("Total empleados ", this.empleados)
@@ -26,6 +21,7 @@ export class Departamento {
             console.log("No se encontrarón empleados en el departamento de: ", nombre)
         }
     }
+    
     //Listar empleados
     listarEmpleados(): Empleado[]{
         return this.empleados
@@ -41,4 +37,7 @@ export class Departamento {
             console.log(`- Nombre: ${empleado.nombre}, edad: ${empleado.getEdad()}, Salario: ${empleado.salario}`)
           })
       }
+
+      
+  
 }

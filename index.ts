@@ -88,7 +88,8 @@ proyectos.forEach((proyecto) => proyecto.detalleProyecto())
 departamentos.forEach((departamento) => departamento.agregarEmpleadosAdepartamento(empleados))
 departamentos.forEach((departamento) => departamento.imprimirEmpleadoPorDepart())
 
-
+//eliminar emplado por departamento
+departamentos.forEach((departamento) => departamento.eliminarEmpleado("Antioquia", empleados))
 
 
 

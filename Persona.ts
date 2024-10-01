@@ -16,7 +16,6 @@ export class Persona {
         this.vehiculo = vehiculo;
         this.estadoCivil = estadoCivil;
     }
-    
 
     saludar(): string {
         const detalleVehiculo = this.vehiculo.map((vehiculo) => `${vehiculo.marca} ${vehiculo.modelo} ${vehiculo.anio}`).join(", ");
