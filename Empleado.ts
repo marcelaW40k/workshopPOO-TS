@@ -1,14 +1,17 @@
 import { Direccion } from "./direccion";
 import { EstadoCivil } from "./estadoCivil";
+import { Idepartamento } from "./IDepartamento";
 import { Persona } from "./Persona";
 import { Vehiculo } from "./vehiculo";
 
 export class Empleado extends Persona {
     salario: number;
+    departamento: Idepartamento;
 
-    constructor(nombre: string, edad: number, direccion: Direccion, salario:number, vehiculo:Vehiculo[], estadoCivil: EstadoCivil) {
+    constructor(nombre: string, edad: number, direccion: Direccion, salario: number, departamento: Idepartamento,  vehiculo:Vehiculo[], estadoCivil: EstadoCivil) {
         super(nombre, edad, direccion, vehiculo, estadoCivil);
         this.salario = salario;
+        this.departamento= departamento;
     }
 
     trabajar(): string {

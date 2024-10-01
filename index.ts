@@ -6,6 +6,7 @@ import { objEmpleados } from "./objEmpleados";
 import { EstadoCivil } from "./estadoCivil";
 import { Empresa } from "./empresa";
 import { Proyecto } from "./Proyecto";
+import { Departamento } from "./Departamento";
 
 
 const coche1 = new Coche("Ford", "Mustang", 2024)
@@ -30,27 +31,34 @@ persona.forEach((e) => console.log(e.saludar()))
 //persona.forEach((p) => console.log("Las personas estan ubicadas en las siguientes ciudades:", p.direccion.ciudad));
 console.log("--------------------------------------------");
 const empleados: Empleado[] = [
-    new Empleado("Juan", 25,{calle: "numero 1", ciudad: "Guajira", pais: "Colombia"}, 1000, [coche1, coche2, moto1, moto2], EstadoCivil.DIVORSIADO),
-    new Empleado("María", 30, {calle: "numer0 2", ciudad: "Cali", pais: "Colombia"},  2000, [coche2, moto2], EstadoCivil.SOLTERO),
-    new Empleado("Carlos", 20, {calle: "numero 3", ciudad: "Medellin", pais: "Colombia"}, 3000, [coche1, moto1, moto2], EstadoCivil.CASADO),
-    new Empleado("Ana", 35, {calle: "numero 4", ciudad: "Cartagena", pais: "Colombia"}, 4000, [moto1, moto2, coche2], EstadoCivil.DIVORSIADO),
-    new Empleado("Pedro", 40,{calle: "numero 5", ciudad: "Neiva", pais: "Colombia"}, 5000, [coche2], EstadoCivil.DIVORSIADO),
-    new Empleado("Luis", 45,  {calle: "numero 6", ciudad: "Caqueta", pais: "Colombia"}, 6000,  [coche1, coche2], EstadoCivil.SOLTERO),
-    new Empleado("Olga", 50, {calle: "numero 8", ciudad: "Bogotá", pais: "Colombia"}, 7000, [moto1], EstadoCivil.SOLTERO),
-    new Empleado("Laura", 55, {calle: "numero 9", ciudad: "Cundinamarca", pais: "Colombia"}, 8000, [moto1, moto2], EstadoCivil.SOLTERO),
-    new Empleado("Pablo", 60, {calle: "numero 10", ciudad: "Bogotá", pais: "Colombia"}, 9000, [moto2], EstadoCivil.DIVORSIADO), 
-    new Empleado("Jose", 65,  {calle: "numero 10", ciudad: "Casanare", pais: "Colombia"}, 10000, [coche1, moto1], EstadoCivil.CASADO),
+    new Empleado("Juan", 25,{calle: "numero 1", ciudad: "Guajira", pais: "Colombia"}, 1000, {id:1, nombre: "Antioquia"}, [coche1, coche2, moto1, moto2], EstadoCivil.DIVORSIADO),
+    new Empleado("María", 30, {calle: "numer0 2", ciudad: "Cali", pais: "Colombia"},  2000,{id:2, nombre: "Cundinamarca"}, [coche2, moto2], EstadoCivil.SOLTERO),
+    new Empleado("Carlos", 20, {calle: "numero 3", ciudad: "Medellin", pais: "Colombia"}, 3000, {id:3, nombre: "Tolima"}, [coche1, moto1, moto2], EstadoCivil.CASADO),
+    new Empleado("Ana", 35, {calle: "numero 4", ciudad: "Cartagena", pais: "Colombia"}, 4000, {id:4, nombre: "Tolima"}, [moto1, moto2, coche2], EstadoCivil.DIVORSIADO),
+    new Empleado("Pedro", 40,{calle: "numero 5", ciudad: "Neiva", pais: "Colombia"}, 5000, {id:5, nombre: "Antioquia"}, [coche2], EstadoCivil.DIVORSIADO),
+    new Empleado("Luis", 45,  {calle: "numero 6", ciudad: "Caqueta", pais: "Colombia"}, 6000, {id:3, nombre: "Tolima"}, [coche1, coche2], EstadoCivil.SOLTERO),
+    new Empleado("Olga", 50, {calle: "numero 8", ciudad: "Bogotá", pais: "Colombia"}, 7000, {id:3, nombre: "Tolima"}, [moto1], EstadoCivil.SOLTERO),
+    new Empleado("Laura", 55, {calle: "numero 9", ciudad: "Cundinamarca", pais: "Colombia"}, 8000, {id:3, nombre: "Tolima"}, [moto1, moto2], EstadoCivil.SOLTERO),
+    new Empleado("Pablo", 60, {calle: "numero 10", ciudad: "Bogotá", pais: "Colombia"}, 9000, {id:3, nombre: "Tolima"},[moto2], EstadoCivil.DIVORSIADO), 
+    new Empleado("Jose", 65,  {calle: "numero 10", ciudad: "Casanare", pais: "Colombia"}, 10000, {id:3, nombre: "Tolima"}, [coche1, moto1], EstadoCivil.CASADO),
 ]
 empleados.forEach((e) => console.log(e.saludar()))
 //empleado.forEach((e) => console.log("Los empleados estan ubicados en las siguintes ciudades: ", e.direccion.ciudad));
 
 const proyectos: Proyecto[] = [
-  new Proyecto("Proyecto: los sueños ", "Descripcion un nuevo sueño", 2, [empleados[0], empleados[1]]),
+    new Proyecto("Proyecto: los sueños ", "Descripcion un nuevo sueño", 2, [empleados[0], empleados[1]]),
     new Proyecto("Proyecto: los sueños 2", "Descripcion un nuevo sueño 2", 1, [empleados[2]]),
     new Proyecto("Proyecto: los sueños 3", "Descripcion un nuevo sueño 3", 3, [empleados[0], empleados[1], empleados[2]]),
     new Proyecto("Proyecto: los sueños 4", "Descripcion un nuevo sueño 4", 4, [empleados[0], empleados[1], empleados[2], empleados[0]]),
     new Proyecto("Proyecto: los sueños 5", "Descripcion un nuevo sueño 5", 5, [empleados[0], empleados[1], empleados[2], empleados[0], empleados[1]]),
 ]
+
+const departamentos: Departamento[] = [
+  new Departamento({id: 1, nombre:"Qindio"}),
+  new Departamento({id: 2, nombre: "Antioquia"}),
+  new Departamento({id: 3, nombre: "Tolima"})
+]
+
 
 const leerObjEmpleados = () => {
 const empleados = JSON.stringify(objEmpleados)
@@ -67,7 +75,7 @@ jsonEmpleadosString();
 //instanciar clase empresa
 const gestionEmpresa = new Empresa()
 //agregar
-empleados.forEach((empleado) => console.log(gestionEmpresa.agregarEmpleados(empleado)))
+empleados.forEach((empleado) => gestionEmpresa.agregarEmpleados(empleado))
 //eliminar
 gestionEmpresa.eliminarEmpleado("Ana")
 //calcular total salario
@@ -75,6 +83,12 @@ gestionEmpresa.calcularSalarios()
 
 //Imprimir la descripcion del proyecto
 proyectos.forEach((proyecto) => proyecto.detalleProyecto())
+
+//empleados por departamentos
+departamentos.forEach((departamento) => departamento.agregarEmpleadosAdepartamento(empleados))
+departamentos.forEach((departamento) => departamento.imprimirEmpleadoPorDepart())
+
+
 
 
 
